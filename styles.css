@@ -1,0 +1,88 @@
+/*
+ MAKE IT PRETTY
+*/
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+    background: linear-gradient(90deg, rgb(253, 69, 130) 20%, rgb(253, 29, 120) 50%, rgba(253,29,99) 100%);
+    margin: 0 auto;
+    width: 40%;
+    height: 40%;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    margin: 20px;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px #000000;
+}
+
+li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.complete {
+    text-decoration: line-through;
+    
+}
+
+#btnClose {
+    float: right;
+    margin-right: 25px;
+    margin-top: 2px;
+}
+
+.btnComplete {
+    border: 2px solid #ff4faf;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    color:  #ff4faf;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.btnComplete:hover {
+    background-color: #ff4faf; 
+    color: white;
+}
+
+.btnClose {
+    font-size: 16px;
+    float: right;
+    background: none;
+    border: none;
+}
+
+input {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btnAdd {
+    width: 100%;
+    background-color: #ff4faf;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+.btnAdd:hover {
+    background-color: #ff4faf; 
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

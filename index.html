@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Angular ToDo Lab </title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+
+
+  <!-- <section ng-controller="ToDoList as $ctrl"> -->
+
+    <div class="main-container" ng-controller="ToDoList as $ctrl">
+      <div class="container" ng-submit="$ctrl.add($ctrl.addItem)">
+        <h1>TODO List</h1>
+        <p>A place where you can store things you you have to do!</p>
+
+        <input type="text" ng-model="filter" placeholder="Filter your to-dos" />
+
+        <ol>
+
+          <li ng-if="!item.closed" ng-repeat="item in $ctrl.toDoItems | filter: filter" ng-class="{complete: item.completed}">
+              <button class="btnComplete" ng-if="!item.completed" ng-click="item.completed = $ctrl.completeTask(itemCompleted)">Complete</button>
+                {{item.name}}
+              <button class="btnClose" ng-click="item.closed = $ctrl.removeTask(item.closed)">x</button>
+              
+          </li>
+        
+        </ol>
+
+        <input id="input" type="text" ng-model="addTask" placeholder="Add your todo" />
+        <button type="submit" class="btnAdd" ng-click="$ctrl.add(addTask)" onclick="document.getElementById('input').value = ''">Add</button>
+        
+
+        
+      </div>
+    </div>
+
+  <!-- </section> -->
+
+  <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.controller.js"></script>
+</body>
+</html>
