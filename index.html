@@ -14,28 +14,12 @@
 
   <!-- <section ng-controller="ToDoList as $ctrl"> -->
 
-    <div class="main-container" ng-controller="ToDoList as $ctrl">
-      <div class="container" ng-submit="$ctrl.add($ctrl.addItem)">
+    <div class="main-container">
+      <div class="container">
         <h1>TODO List</h1>
         <p>A place where you can store things you you have to do!</p>
 
-        <input type="text" ng-model="filter" placeholder="Filter your to-dos" />
-
-        <ol>
-
-          <li ng-if="!item.closed" ng-repeat="item in $ctrl.toDoItems | filter: filter" ng-class="{complete: item.completed}">
-              <button class="btnComplete" ng-if="!item.completed" ng-click="item.completed = $ctrl.completeTask(itemCompleted)">Complete</button>
-                {{item.name}}
-              <button class="btnClose" ng-click="item.closed = $ctrl.removeTask(item.closed)">x</button>
-              
-          </li>
-        
-        </ol>
-
-        <input id="input" type="text" ng-model="addTask" placeholder="Add your todo" />
-        <button type="submit" class="btnAdd" ng-click="$ctrl.add(addTask)" onclick="document.getElementById('input').value = ''">Add</button>
-        
-
+        <todo-list></todo-list>
         
       </div>
     </div>
@@ -44,6 +28,8 @@
 
   <script src="https://code.angularjs.org/1.7.8/angular.js"></script>
   <script src="app.module.js"></script>
-  <script src="app.controller.js"></script>
+  <script src="components/TodoItem.js"></script>
+  <script src="components/TodoList.js"></script>
+
 </body>
 </html>
